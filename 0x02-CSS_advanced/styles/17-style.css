@@ -158,6 +158,10 @@ a:active {
   color: var(--color-primary);
 }
 
+.footer {
+  padding: var(--footer-padding) var(--footer-padding) var(--footer-padding) var(--footer-padding);
+}
+
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
@@ -189,6 +193,3 @@ a:active {
   --footer-padding: 5rem 0 1rem;
 }
 
-.footer {
-  padding: var(--footer-padding) var(--footer-padding) var(--footer-padding) var(--footer-padding);
-}
