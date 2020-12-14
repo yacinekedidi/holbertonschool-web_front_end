@@ -93,20 +93,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-weight-bold);
 }
 
-.header {
-  padding: var(--header-padding);
-}
-
-.header-logo {
-  position: var(--header-logo-position);
-}
-
-.header-logo a {
-  display: var(--header-logo-link-display);
-  position: var(--header-logo-link-position);
-  top: var(--header-logo-link-top);
-  left: var(--header-logo-link-left;)
-}
 
 a:link {
   color: var(--text-color);
@@ -271,6 +257,21 @@ ul.row {
   text-align: right;
 }
 
+.header {
+  padding: var(--header-padding);
+}
+
+.header-logo {
+  position: var(--header-logo-position);
+}
+
+.header-logo a {
+  display: var(--header-logo-link-display);
+  position: var(--header-logo-link-position);
+  top: var(--header-logo-link-top);
+  left: var(--header-logo-link-left;)
+}
+
 .navbar-menu {
   float: right;
 }
@@ -330,6 +331,7 @@ ul.row {
 .footer {
   padding: var(--footer-padding);
 }
+
 
 
 :root {
