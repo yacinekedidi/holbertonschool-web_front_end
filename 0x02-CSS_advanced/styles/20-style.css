@@ -212,7 +212,7 @@ ul.row {
   color: var(--nav-item-link-hover);
 }
 
-.row:after {
+.row::after {
   content: "";
   display: table;
   clear: both;
