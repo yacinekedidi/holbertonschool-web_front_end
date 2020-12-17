@@ -1,0 +1,13 @@
+/* My style */
+@mixin try($p, $pp)
+{
+	body {
+		margin-left: $p;
+		margin-right: $p;
+	}
+	div {
+		margin-left: $pp;
+		margin-right: $pp;
+	}
+}
+@include try(10px, 15px);
