@@ -1,13 +1,14 @@
 /* My style */
-@mixin try($p, $pp)
+@mixin t($p)
 {
-	body {
-		margin-left: $p;
-		margin-right: $p;
-	}
-	div {
-		margin-left: $pp;
-		margin-right: $pp;
-	}
+	margin-left: $p;
+	margin-right: $p;
 }
-@include try(10px, 15px);
+
+body {
+	@include t(10px);
+}
+div {
+	@include t(15px);
+}
+
