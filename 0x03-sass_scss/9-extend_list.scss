@@ -1,0 +1,19 @@
+/* My style */
+%ex {
+	font-size: 12px;
+}
+
+
+.success {
+	@extend %ex;
+	color: #00FF00;
+}
+
+.warning {
+	@extend %ex;
+	color: #FF0000;
+}
+
+.info {
+	@extend %ex;
+}
