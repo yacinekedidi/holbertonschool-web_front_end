@@ -620,7 +620,7 @@
       content:", ";
     }
 
-    .tag-list li:last-child {
+    .tag-list li:last-child::after {
       content: "";
     }
 
