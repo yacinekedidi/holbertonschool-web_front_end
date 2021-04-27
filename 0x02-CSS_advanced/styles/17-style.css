@@ -183,14 +183,9 @@ template {
 /*# sourceMappingURL=normalize.min.css.map */
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
 }
 
 :root {
@@ -222,6 +217,11 @@ html {
   --section-footer-padding: 3rem 0 0;
   --section-footer-align: center;
   --footer-padding: 5rem 0 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
@@ -263,6 +263,10 @@ a:active {
   display: none;
 }
 
+.card-category {
+  color: var(--color-primary);
+}
+
 .section {
   padding: var(--section-padding);
 }
@@ -277,7 +281,7 @@ a:active {
 }
 
 .section-footer {
-  padding: var(--footer-padding);
+  padding: var(--section-footer-padding);
   text-align: var(--section-footer-align);
 }
 
@@ -294,10 +298,6 @@ a:active {
   font-family: var(--font-family-title);
   text-transform: var(--section-tagline-transform);
   font-weight: var(--font-weight-bold);
-}
-
-.card-category {
-  color: var(--color-primary);
 }
 
 .container {
