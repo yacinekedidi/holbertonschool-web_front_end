@@ -396,7 +396,6 @@ a:active {
 .card-testimonial .card-quote {
   position: relative;
 }
-
 .card-testimonial .card-quote::before {
   content: "\201C";
   position: absolute;
