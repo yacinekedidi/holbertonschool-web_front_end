@@ -255,6 +255,21 @@ body {
   line-height: var(--line-height-base);
 }
 
+.header {
+  padding: var(--header-padding);
+}
+
+.header-logo {
+  position: var(--header-logo-position);
+}
+
+.header-logo a {
+  display: var(--header-logo-link-display);
+  position: var(--header-logo-link-position);
+  top: var(--header-logo-link-top);
+  left: var(--header-logo-link-left);
+}
+
 h1,
 h2,
 h3,
@@ -346,7 +361,7 @@ a:active {
   height: 30rem;
   width: 100%;
   object-fit: cover;
-  vertical-align: bottom;
+  vertical-align: 0;
 }
 
 .card-work .card-inner {
@@ -374,14 +389,13 @@ a:active {
   text-decoration: none;
   padding-top: 45%;
 }
-
 .card-work .card-title a::after {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  content: "";
 }
 
 .card-work:hover .card-title {
@@ -540,19 +554,4 @@ ul.row {
 
 .footer {
   padding: var(--footer-padding);
-}
-
-.header {
-  padding: var(--header-padding);
-}
-
-.header-logo {
-  position: var(--header-logo-position);
-}
-
-.header-logo a {
-  display: var(--header-logo-link-display);
-  position: var(--header-logo-link-position);
-  top: var(--header-logo-link-top);
-  left: var(--header-logo-link-left);
 }
