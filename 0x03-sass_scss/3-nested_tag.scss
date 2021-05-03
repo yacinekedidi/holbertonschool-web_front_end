@@ -1,0 +1,9 @@
+/* 10px margin for p tags inside the body */
+body {
+  margin: 0px;
+  padding: 0px;
+
+  p {
+    margin: 10px;
+  }
+}
