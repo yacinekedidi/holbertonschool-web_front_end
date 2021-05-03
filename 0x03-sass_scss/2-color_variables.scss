@@ -1,0 +1,15 @@
+/* declaring and assiging sass variables*/
+$color: #3d3d3d;
+$bg-color: #6d6d6d;
+body {
+  color: $color;
+  background-color: $bg-color;
+}
+
+p {
+  color: $color;
+}
+
+h2 {
+  background-color: $bg-color;
+}
