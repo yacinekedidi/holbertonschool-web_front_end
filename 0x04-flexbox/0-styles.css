@@ -334,7 +334,7 @@ a:active {
 /* Grid
       ============================= */
 
-ul {
+.row {
   display: flex;
 }
 
