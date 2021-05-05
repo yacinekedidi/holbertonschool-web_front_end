@@ -16,6 +16,8 @@ body {
   width: 50%;
   display: flex;
   justify-content: center;
+  position: relative;
+  top: 20px;
 }
 
 .box {
@@ -45,8 +47,8 @@ body {
 .box3 {
   background-color: #47455e;
   width: 80%;
-  height: 6.5rem;
-  top: 10px;
+  height: 7.5rem;
+  top: -10px;
 }
 
 .box4 {
