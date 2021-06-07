@@ -1,0 +1,44 @@
+:root {
+  --color-red: #e0003c;
+  --color-crismon: #bc1340;
+  --color-silver: #8c8c8c;
+}
+
+.btn-primary {
+  background-color: var(--color-red);
+  border-color: var(--color-crismon);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  border-color: var(--color-red);
+  background-color: var(--color-crismon);
+}
+
+.btn-outline-primary {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+a,
+a:hover,
+a:focus {
+  color: var(--color-red);
+}
+
+.card,
+.card-header,
+.card-footer {
+  border-color: var(--color-red);
+  border-radius: 1rem;
+}
+
+.card-header {
+  background-color: var(--color-red);
+  color: white;
+}
+
+.text-muted {
+  color: var(--color-silver);
+}
