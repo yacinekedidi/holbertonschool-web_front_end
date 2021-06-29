@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Task 3</title>
+  </head>
+
+  <body>
+    <script type="application/javascript">
+      window.onload = function () {
+        function createSearchForm() {
+          $("body").append([
+            $("<input/>", { type: "text" }),
+            $("<input/>", {
+              type: "submit",
+              on: {
+                click: function () {
+                  queryWikipedia($("input[type='text']").val());
+                },
+              },
+            }),
+            $("<ul/>"),
+          ]);
+        }
+
+        function addNewArticle(id, title, snippet) {
+          $("ul").append([
+            $("<li/>").append(
+              [
+                $("<p/>").append([
+                  $("<span/>", { text: `${id} -` }),
+                  $("<b/>", { text: title }),
+                ]),
+              ],
+              $("<p/>", { html: snippet })
+            ),
+          ]);
+        }
+
+        function queryWikipedia(search) {
+          console.log(search);
+          let url = "https://en.wikipedia.org/w/api.php";
+
+          const params = {
+            action: "query",
+            list: "search",
+            srsearch: search,
+            format: "json",
+          };
+          url = url + "?origin=*";
+          Object.keys(params).forEach(function (key) {
+            url += "&" + key + "=" + params[key];
+          });
+          console.log(url);
+          $.get(url, function (data, status) {
+            console.log(data.query.search);
+            data.query.search.forEach((res) => {
+              const { pageid, title, snippet } = res;
+              addNewArticle(pageid, title, snippet);
+            });
+          });
+        }
+        createSearchForm();
+      };
+    </script>
+  </body>
+</html>
