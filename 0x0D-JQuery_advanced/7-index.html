@@ -55,9 +55,7 @@
           Object.keys(params).forEach(function (key) {
             url += "&" + key + "=" + params[key];
           });
-          console.log(url);
           $.get(url, function (data, status) {
-            console.log(data.query.search);
             data.query.search.forEach((res) => {
               const { pageid, title, snippet } = res;
               addNewArticle(pageid, title, snippet);
