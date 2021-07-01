@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+      if (typeof Storage === "undefined")
+        alert(
+          "Sorry, your browser does not support Web storage. Try again with a better one"
+        );
+      else {
+        createStore();
+        displayCart();
+      }
+
+      function addItemToCart(item) {
+        localStorage.setItem(item, true);
+      }
+      function createStore() {
+        const list = document.createElement("ul");
+        document.body.append(list);
+        availableItems.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          li.addEventListener("click", function () {
+            addItemToCart(item);
+          });
+          list.append(li);
+        });
+      }
+
+      function displayCart() {
+        if (!localStorage.length) return;
+        const p = document.createElement("p");
+        p.textContent = `You previously had ${localStorage.length} items in your cart`;
+        document.body.append(p);
+      }
+    </script>
+  </body>
+</html>
