@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "webpack-cli serve --mode development"
+  },
+  "devDependencies": {
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@webpack-cli/init": "^1.1.3"
+  }
+}

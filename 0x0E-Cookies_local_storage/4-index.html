@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .container {
+        padding: 1rem;
+        display: none;
+      }
+      h2 {
+        margin-bottom: 2rem;
+      }
+      .btn {
+        background-color: transparent;
+        border: 0.5px solid;
+        border-radius: 5px;
+        padding: 0.2rem 0.4rem;
+      }
+      .btn__login {
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+      }
+      input {
+        padding: 0.3rem;
+      }
+
+      input:not(input:nth-of-type(1)) {
+        margin: auto 0.5rem;
+      }
+
+      .link {
+        font-weight: normal;
+        font-style: italic;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="text" id="email" placeholder="Email" />
+      <button class="btn btn__login" onclick="setCookies()">Log me in</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script>
+      function setCookies() {
+        const firstname = document.getElementById("firstname");
+        const email = document.getElementById("email");
+        const d = new Date();
+        d.setTime(d.getTime() + 9 * 24 * 60 * 60 * 1000);
+        const expires = d.toUTCString();
+        document.cookie = `firstname=${firstname.value}; expires=${expires}`;
+        document.cookie = `email=${email.value}; expires=${expires}`;
+      }
+
+      function showCookies() {
+        const p = document.createElement("p");
+        p.innerHTML = `Email: ${Cookies.get(
+          "email"
+        )} - Firstname: ${Cookies.get("firstname")}`;
+        document.body.append(p);
+      }
+
+      function showForm() {
+        const h1 = document.querySelector("h1");
+        const form = document.querySelector(".container");
+        if (h1) h1.remove();
+        form.style.display = "block";
+      }
+
+      function hideForm() {
+        form.style.display = "none";
+      }
+
+      function deleteCookiesAndShowForm() {
+        Cookies.remove("firstname");
+        Cookies.remove("email");
+        showForm();
+      }
+
+      function showWelcomeMessageOrForm() {
+        if (!Cookies.get("firstname")) showForm();
+        else {
+          const welcome = document.createElement("h1");
+          const logoutLink = document.createElement("a");
+          logoutLink.textContent = "(logout)";
+          logoutLink.classList.add("link");
+          welcome.textContent = `Welcome ${Cookies.get("firstname")}`;
+          welcome.appendChild(logoutLink);
+          document.body.innerHTML = "";
+          document.body.append(welcome);
+          logoutLink.addEventListener("click", function (e) {
+            deleteCookiesAndShowForm();
+          });
+        }
+      }
+      function setCookiesAndShowWelcomeMessage() {
+        Cookies.set("firstname", "Zyacine");
+        Cookies.set("email", "example@gmail.com");
+        showWelcomeMessageOrForm();
+      }
+      setCookiesAndShowWelcomeMessage();
+    </script>
+  </body>
+</html>
